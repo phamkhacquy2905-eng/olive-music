@@ -619,3 +619,92 @@ body {
     background-color: white;
     color: var(--color-orange);
 }
+
+/* ======================================================
+   CSS DÀNH CHO ĐIỆN THOẠI VÀ TABLET (RESPONSIVE)
+   Đoạn mã này chỉ kích hoạt khi màn hình nhỏ hơn 768px
+   ====================================================== */
+
+@media (max-width: 768px) {
+    /* 1. Căn lề lại cho gọn hơn trên mobile */
+    .header, .top-bar, .section-container, .footer {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* 2. Top Bar: Xếp dòng chữ và nút bấm chồng lên nhau */
+    .top-bar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    /* 3. Header: Xếp Logo, Menu và Ô tìm kiếm theo chiều dọc */
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        min-height: auto;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap; /* Cho phép menu rớt dòng nếu quá dài */
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* 4. Banner lớn: Giảm cỡ chữ */
+    .hero-banner h1 {
+        font-size: 28px;
+    }
+    .hero-banner p {
+        font-size: 15px;
+    }
+
+    /* 5. Khu vực Tin Tức: Bỏ chia cột 65-35, chuyển thành 1 cột */
+    .news-layout {
+        flex-direction: column;
+    }
+    
+    .news-item {
+        flex-direction: column; /* Ảnh nằm trên, chữ nằm dưới */
+    }
+    
+    .news-image, .news-video {
+        width: 100%; /* Ảnh và Video bung đầy màn hình điện thoại */
+        height: auto;
+        aspect-ratio: 1/1; /* Giữ khung hình vuông */
+    }
+
+    /* 6. Khu vực Bản Đồ: Danh sách ở trên, Bản đồ ở dưới */
+    .store-locator-container {
+        flex-direction: column;
+        height: auto; /* Bỏ giới hạn chiều cao 450px để khung tự giãn */
+    }
+
+    .store-list, .store-map {
+        width: 100%; /* Chiếm 100% chiều rộng */
+    }
+
+    .store-map {
+        height: 350px; /* Cấp cho bản đồ một chiều cao cố định trên điện thoại */
+    }
+
+    /* 7. Footer: Các cột dọc xếp chồng lên nhau */
+    .footer-top {
+        grid-template-columns: 1fr; /* Ép về 1 cột duy nhất */
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
