@@ -708,3 +708,75 @@ body {
         gap: 15px;
     }
 }
+
+/* --- GIAO DIỆN FORM ĐĂNG NHẬP / ĐĂNG KÝ --- */
+.auth-content {
+    position: relative;
+    background-color: #fff; /* Nền trắng, không dùng nền đen như video */
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #eee;
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px; /* Đè lên viền xám ở dưới */
+    transition: all 0.3s ease;
+}
+
+.auth-tab.active {
+    color: var(--color-green);
+    border-bottom-color: var(--color-orange); /* Gạch chân màu cam cho tab đang chọn */
+}
+
+.auth-form {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-form input {
+    padding: 14px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.auth-form input:focus {
+    border-color: var(--color-green);
+    box-shadow: 0 0 5px rgba(10, 71, 55, 0.2);
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.auth-forgot {
+    text-align: center;
+    font-size: 13px;
+    color: var(--color-green);
+    cursor: pointer;
+    margin-top: 5px;
+    text-decoration: underline;
+}
